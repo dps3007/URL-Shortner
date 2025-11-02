@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { FiCopy, FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
 import QRCode from "react-qr-code";
-
-const BACKEND_URL = "http://localhost:8000/url"; // backend base
+import {BACKEND_URL} from "../api/axiosInstance.js"
 
 const UrlCard = ({ url, onDelete }) => {
   const [copied, setCopied] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
-  const shortUrl = `${BACKEND_URL}/codes/${url.code}`;
+  const shortUrl = `${BACKEND_URL}/url/codes/${url.code}`;
   const longUrl = url.longUrl || url.target_url || "";
 
   const handleCopy = async () => {
@@ -31,7 +30,7 @@ const UrlCard = ({ url, onDelete }) => {
 
     try {
       setDeleting(true);
-      const res = await fetch(`${BACKEND_URL}/codes/${url.code}`, {
+      const res = await fetch(`${BACKEND_URL}/url/codes/${url.code}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
