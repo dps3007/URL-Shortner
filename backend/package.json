@@ -1,11 +1,12 @@
 {
-  "name": "url_shortner",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "node --watch index.js",
+    "start": "node index.js",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio"
   },
