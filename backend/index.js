@@ -10,25 +10,19 @@ const PORT = process.env.PORT ?? 8000;
 
 app.use(
   cors({
-    origin:
-      "https://url-shortner-frontend-five-psi.vercel.app" ||
-      "http://localhost:5173",
+    origin: "https://url-shortner-frontend-five-psi.vercel.app",
     credentials: true,
   })
 );
 
-
 app.use(express.json());
-
 
 app.use("/url", urlRouter);
 app.use("/user", userRouter);
 
-
 app.get("/", (req, res) => {
   return res.json({ status: "Server is up and running 🚀" });
 });
-
 
 app.listen(PORT, () => {
   console.log(`✅ Server Running on port ${PORT}`);
