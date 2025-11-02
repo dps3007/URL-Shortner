@@ -11,7 +11,7 @@ const PORT = process.env.PORT ?? 8000;
 app.use(
   cors({
     origin:
-      "url-shortner-frontend-32tvqv99t-pal30072002-2453s-projects.vercel.app",
+      "url-shortner-frontend-6kpd66fhq-pal30072002-2453s-projects.vercel.app",
   })
 );
 
