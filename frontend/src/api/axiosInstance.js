@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const BACKEND_URL = "http://localhost:8000" || "https://url-shortner-backend-irr2.onrender.com";
+//export const BACKEND_URL = "http://localhost:8000"
+ 
+export const BACKEND_URL = "https://url-shortner-backend-irr2.onrender.com";
 
 const axiosInstance = axios.create({ baseURL: BACKEND_URL });
 
