@@ -17,11 +17,12 @@ const Signup = () => {
     try {
       // send all required fields to backend
       await axiosInstance.post("/user/signup", {
-        first_name: firstName,
-        last_name: lastName,
+        firstName,
+        lastName,
         email,
         password,
       });
+
 
       toast.success("Account created successfully! Please log in.");
       navigate("/login");
