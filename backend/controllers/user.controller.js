@@ -38,6 +38,7 @@ export async function signup(req, res) {
 
 export async function login(req, res) {
   try {
+    console.log("LOGIN BODY:", req.body);
     const body = loginPostRequestBodySchema.parse(req.body);
 
     const user = await getUserByEmail(body.email.trim());
