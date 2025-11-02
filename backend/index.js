@@ -14,9 +14,11 @@ app.use(
       "http://localhost:5173",
       "https://url-shortner-nu-virid.vercel.app",
     ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 
