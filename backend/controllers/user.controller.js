@@ -42,16 +42,21 @@ export async function login(req, res) {
     const body = loginPostRequestBodySchema.parse(req.body);
 
     const user = await getUserByEmail(body.email.trim());
+    console.log("USER FOUND:", user);
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
     // Correct destructuring here
-    const { password: hashedPassword } = hashedPasswordWithSalt(body.password.trim(), user.salt);
+    const { password: hashedPassword } = hashedPasswordWithSalt(body.password.trim(), user.salt); 
+    
+    console.log("HASHED INPUT PASSWORD:", hashedPassword);
+    console.log("USER PASSWORD IN DB:", user.password);
 
     if (hashedPassword !== user.password) {
-      return res.status(401).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "Invalid credentials (password mismatched)" });
     }
+
 
     // create token
     const token = await createUserToken({id: user.id});
@@ -59,6 +64,7 @@ export async function login(req, res) {
 
     return res.status(200).json({ message: "Login successful", token: token });
   } catch (error) {
+    console.log("Login Error:", error);
     return res.status(400).json({ error: error.message });
   }
 }
