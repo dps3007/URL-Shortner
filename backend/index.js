@@ -10,7 +10,11 @@ const PORT = process.env.PORT ?? 8000;
 
 app.use(
   cors({
-    origin: "https://url-shortner-nu-virid.vercel.app",
+    origin: [
+      "http://localhost:5173",
+      "https://url-shortner-frontend-five-psi.vercel.app",
+    ],
+    credentials: true,
   })
 );
 
