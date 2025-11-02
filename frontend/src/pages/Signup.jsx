@@ -17,8 +17,8 @@ const Signup = () => {
     try {
       // send all required fields to backend
       await axiosInstance.post("/user/signup", {
-        firstName,
-        lastName,
+        first_name: firstName,
+        last_name: lastName,
         email,
         password,
       });
