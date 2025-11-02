@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://url-shortner-frontend-five-psi.vercel.app",
+      "https://url-shortner-nu-virid.vercel.app",
     ],
     credentials: true,
   })
