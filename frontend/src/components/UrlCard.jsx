@@ -59,7 +59,7 @@ const UrlCard = ({ url, onDelete }) => {
           rel="noreferrer"
           className="text-sky-600 font-medium break-all"
         >
-          {shortUrl}
+          {url.code}
         </a>
         <p className="text-sm text-gray-600 mt-1 break-all">{longUrl}</p>
         <div className="text-xs text-gray-500 mt-2">
