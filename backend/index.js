@@ -22,12 +22,6 @@ app.use(
 
 app.use(express.json());
 
-app.post("/url/test-shorten", (req, res) => {
-  console.log("Received Body:", req.body);
-  return res.status(200).json({ message: "OK", received: req.body });
-});
-
-
 app.use("/url", urlRouter);
 app.use("/user", userRouter);
 
