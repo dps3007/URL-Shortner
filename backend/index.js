@@ -22,6 +22,11 @@ app.use(
 
 app.use(express.json());
 
+app.post("/url/test-shorten", async (req, res) => {
+  return res.status(200).json({ message: "Test OK" });
+});
+
+
 app.use("/url", urlRouter);
 app.use("/user", userRouter);
 
