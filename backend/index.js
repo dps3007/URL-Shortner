@@ -22,8 +22,9 @@ app.use(
 
 app.use(express.json());
 
-app.post("/url/test-shorten", async (req, res) => {
-  return res.status(200).json({ message: "Test OK" });
+app.post("/url/test-shorten", (req, res) => {
+  console.log("Received Body:", req.body);
+  return res.status(200).json({ message: "OK", received: req.body });
 });
 
 
